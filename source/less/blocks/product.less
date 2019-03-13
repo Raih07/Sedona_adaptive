@@ -1,0 +1,226 @@
+.product {
+  box-sizing: border-box;
+  padding-left: 19px;
+  padding-right: 19px;
+  padding-bottom: 24px;
+
+  @media (min-width: @width-tablets) {
+    min-height: 513px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 40px;
+    background-image: linear-gradient(to bottom, #ffffff 82px, @gray 82px, @gray 100%);
+  }
+
+  &--more {
+    position: relative;
+    padding-top: 79px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 26px;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      background: url("../img/icon-plus-mobile.svg") no-repeat center;
+      background-size: 30px 30px;
+      transform: translateX(-50%);
+      opacity: 0.2;
+
+      @media (min-width: @width-tablets) {
+        top: 55px;
+        width: 60px;
+        height: 60px;
+        background: url("../img/icon-plus.svg") no-repeat center;
+        background-size: 60px 60px;
+      }
+    }
+
+    @media (min-width: @width-tablets) {
+      min-height: 432px;
+      padding-top: 163px;
+      padding-left: 38px;
+      padding-right: 38px;
+      outline: 1px solid @gray-light;
+      outline-offset: -1px;
+      background-image: none;
+    }
+  }
+}
+
+.product__main {
+  display: flex;
+  //align-items: flex-start;
+  justify-content: space-between;
+
+  @media (min-width: @width-tablets) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.product__picture {
+  width: 140px;
+  flex-shrink: 0;
+
+  @media (min-width: @width-tablets) {
+    min-height: 208px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.product__img-link {
+  outline: none;
+}
+
+.product__img {
+  display: block;
+  width: 140px;
+  height: auto;
+
+  @media (min-width: @width-tablets) {
+    width: 324px;
+  }
+
+  @media (min-width: @width-desktop) {
+    width: 245px;
+  }
+}
+
+.product__description {
+  box-sizing: border-box;
+  width: 50%;
+  padding-top: 21px;
+  padding-bottom: 20px;
+
+  @media (min-width: @width-tablets) {
+    width: 100%;
+    padding: 37px 38px 20px;
+  }
+}
+
+.product__tittle {
+  margin: 0;
+  margin-bottom: 12px;
+  width: 70%;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: @black;
+
+  @media (min-width: @width-tablets) {
+    width: 159px;
+    margin-bottom: 19px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.product__tittle-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product__info {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px;
+  line-height: 15px;
+  font-family: "ArialMT", "Arial", sans-serif;
+  color: @gray-font;
+
+  @media (min-width: @width-tablets) {
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+
+.product__info-row {
+  display: flex;
+
+  @media (min-width: @width-tablets) {
+    padding-top: 7px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid @gray-middle2;
+  }
+}
+
+.product__info-name {
+  width: 50%;
+}
+
+.product__info-value {
+  width: 50%;
+  text-align: right;
+}
+
+.product__link-box {
+  @media (min-width: @width-tablets) {
+    margin-top: auto;
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+}
+
+.product--more .product__link-box {
+  @media (min-width: @width-tablets) {
+    padding: 0;
+  }
+}
+
+.product__link {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.product__more {
+  //position: relative;
+  //padding-top: 79px;
+  margin-bottom: 21px;
+  text-align: center;
+
+  @media (min-width: @width-tablets) {
+    padding: 0 35px;
+  }
+
+  @media (min-width: @width-desktop) {
+    padding: 0;
+  }
+}
+
+.product__more-tittle {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: @black;
+
+  @media (min-width: @width-tablets) {
+    font-size: 20px;
+    margin-bottom: 27px;
+  }
+}
+
+.product__more-subtittle {
+  margin: 0;
+  font-family: "ArialMT", "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  color: @gray-font;
+
+  @media (min-width: @width-tablets) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

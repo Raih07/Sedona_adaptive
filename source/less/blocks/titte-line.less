@@ -1,0 +1,45 @@
+.titte-line {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  padding-right: 20px;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+  color: @black;
+  background-color: @white;
+
+  @media (min-width: @width-tablets) {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 14px;
+    width: 100vw;
+    height: 3px;
+    background-color: @green;
+    z-index: -1;
+
+    @media (min-width: @width-tablets) {
+      top: 22px;
+    }
+  }
+
+  &::before {
+    @media (min-width: @width-tablets) {
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 22px;
+      width: 100vw;
+      height: 3px;
+      background-color: @green;
+      z-index: -1;
+    }
+  }
+}

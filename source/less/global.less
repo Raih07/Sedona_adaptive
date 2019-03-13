@@ -1,0 +1,175 @@
+body {
+  .mar-pad-reset();
+  min-width: @width-mobile;
+  font-size: @font-size;
+  line-height: @line-height;
+  font-weight: @font-weight;
+  font-family: @font-fam;
+  text-transform: uppercase;
+  color: @gray-font;
+  background-color: @white;
+
+  @media (min-width: @width-desktop) {
+    max-width: @width-desktop;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+	box-shadow: 0px 0px 15px 5px rgba(0, 1, 1, 0.2);
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tab-user .main-nav__link:focus {
+  background-color: @blue2;
+}
+
+.tab-user .main-nav__toggle:focus {
+  outline: 2px solid @brown;
+  outline-offset: 3px;
+}
+
+.tab-user .program__item-link:focus {
+  outline: 2px solid #989898;
+  outline-offset: 3px;
+}
+
+.tab-user .compare__btn:focus {
+  outline: 2px solid #989898;
+  outline-offset: 3px;
+}
+
+.tab-user .btn {
+  &--green:focus {
+    box-shadow: 0 0 0 3px #ffffff,
+      0 0 0 6px @green;
+  }
+
+  &--gray:focus {
+    box-shadow: 0 0 0 3px #ffffff,
+      0 0 0 6px @gray-middle2;
+  }
+}
+
+.tab-user .product__img-link:focus {
+  opacity: 0.7;
+}
+
+.tab-user .product__tittle-link:focus {
+  outline: 2px solid #989898;
+  outline-offset: 3px;
+}
+
+.tab-user .extra-products__item-link:focus {
+  outline: 2px solid #989898;
+  outline-offset: 3px;
+}
+
+.tab-user .extra-products__gift-link:focus {
+  box-shadow: 0 0 0 3px #ffffff,
+    0 0 6px 6px @green;
+}
+
+/*
+.tab-user .main-nav__link:focus {
+  color: @pink;
+  outline: none;
+
+  @media (min-width: @width-desktop) {
+    box-shadow: 0 0 0 3px #ffffff,
+      0 0 6px 6px @dark-blue;
+  }
+}
+
+.tab-user .main-header__logo {
+  &:focus .main-header__logo-img {
+    fill: @pink;
+  }
+}
+
+.tab-user .downloads__app-link {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #ffffff,
+      0 0 6px 6px @dark-blue;
+  }
+}
+
+.tab-user .features__period-link {
+  &:focus {
+    outline: 2px solid @pink;
+    outline-offset: 4px;
+  }
+}
+
+.tab-user .slider__btn:focus {
+  box-shadow: 0 0 0 2px #ffffff,
+    0 0 0 4px @dark-blue;
+}
+
+.tab-user .reviews__btn {
+  &:focus {
+    outline: 2px solid @dark-blue;
+    outline-offset: 4px;
+  }
+}
+
+.tab-user .contacts__text {
+  &:focus {
+    outline: 2px solid @pink;
+  }
+}
+
+.tab-user .social__btn:focus {
+  outline: none;
+  border: 3px solid rgb(40, 54, 69);
+}
+
+.tab-user .copyright__logo-link {
+  &:focus {
+    outline: 2px solid @pink;
+    outline-offset: 4px;
+  }
+}
+
+.tab-user .questionnaire__btn {
+  &:focus {
+    box-shadow: 0 0 0 3px #ffffff,
+      0 0 6px 6px @dark-green;
+  }
+}
+
+.tab-user .popup__btn {
+  &:focus {
+    box-shadow: 0 0 0 3px #ffffff,
+      0 0 6px 6px @dark-green;
+  }
+}
+
+.tab-user .photo-card__picture {
+  &:focus {
+    outline: none;
+    box-shadow: 0 -2px 18px 2px rgba(0, 0, 0, 0.72);
+  }
+}
+
+.tab-user .photo-card__like-btn {
+  &:focus {
+    box-shadow: 0 0 0 4px @gray-white,
+      0 0 6px 7px @pink;
+  }
+}
+*/

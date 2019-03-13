@@ -1,0 +1,159 @@
+.features {
+  padding-top: 17px;
+  padding-bottom: 22px;
+
+  @media (min-width: @width-tablets) {
+    padding-top: 45px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid @gray-light;
+  }
+
+  @media (min-width: @width-desktop) {
+    padding-top: 43px;
+    border: none;
+  }
+}
+
+.features__wrapper {
+  .container();
+  .set-container();
+}
+
+.features__title {
+  margin: 0;
+  margin-bottom: 28px;
+  font-size: 36px;
+  line-height: 60px;
+  font-weight: 400;
+  color: @black;
+
+  @media (min-width: @width-tablets) {
+    margin-bottom: 40px;
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+
+.features__list {
+  .list-reset();
+  counter-reset: feature_number;
+
+  @media (min-width: @width-tablets) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.features__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  @media (min-width: @width-tablets) {
+    display: block;
+    width: 324px;
+    min-height: 235px;
+    padding-top: 32px;
+    margin-right: 60px;
+    margin-bottom: 50px;
+    counter-increment: feature_number;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: @width-desktop) {
+    width: 245px;
+    margin-right: 80px;
+    margin-bottom: 15px;
+
+    &:nth-child(2n) {
+      margin-right: 80px;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    background-color: @green;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px 50px;
+
+    @media (min-width: @width-tablets) {
+      margin-bottom: 32px;
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &::after {
+    @media (min-width: @width-tablets) {
+      content: counter(feature_number);
+      position: absolute;
+      font-size: 281px;
+      line-height: 281px;
+      color: @gray;
+      top: -7px;
+      right: 79px;
+      z-index: -1;
+    }
+
+    @media (min-width: @width-desktop) {
+      right: -4px;
+    }
+  }
+
+  &--health::before {
+    background-image: url("../img/advantage-leaf@1x.png");
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/advantage-leaf@2x.png");
+    }
+  }
+
+  &--powder::before {
+    background-image: url("../img/advantage-powder@1x.png");
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/advantage-powder@2x.png");
+    }
+  }
+
+  &--food::before {
+    background-image: url("../img/advantage-dining@1x.png");
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/advantage-dining@2x.png");
+    }
+  }
+
+  &--time::before {
+    background-image: url("../img/advantage-clock@1x.png");
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/advantage-clock@2x.png");
+    }
+  }
+}
+
+.features__item-text {
+  margin: 0;
+  font-family: "ArialMT", "Arial", sans-serif;
+
+  @media (min-width: @width-tablets) {
+    width: 245px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
