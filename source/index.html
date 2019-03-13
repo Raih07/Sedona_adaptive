@@ -34,28 +34,90 @@
           <li class="main-nav__item"><a href="#" class="main-nav__link">Html Academy</a></li>
         </ul>
       </nav>
-
     </header>
-    <main class="page-main">
-      <section class="intro">
-        <div class="intro__wpapper">
-          <div class="intro__text-box">
-            <h1 class="intro__tittle">Функциональное питание для котов</h1>
-            <p class="intro__sub-tittle">Занялся собой? Займись котом!</p>
+    <main>
+      <div class="intro">
+        <img class="intro__slogan" src="img/text-sedona-index.svg" alt="Welcome to the gorgeous Sedona">
+      </div>
+
+      <article class="reasons">
+        <header class="reasons__header">
+          <h1 class="reasons__tittle">Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
+          <p class="reasons__description">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+        </header>
+        <div class="reasons__row">
+          <div class="reasons__item reason reason--blue reason--triangle">
+            <h2 class="reason__tittle">Настоящий городок</h2>
+            <span class="reason__number">&ndash; №1 &ndash;</span>
+            <p class="reason__text">Седона не аттракцион для туристов, там течет своя жизнь</p>
           </div>
-          <picture>
-            <source type="image/webp" media="(min-width: 1300px)" srcset="img/index-can-desktop@1x.webp 1x, img/index-can-desktop@2x.webp 2x">
-            <source type="image/webp" media="(min-width: 768px)" srcset="img/index-can-tablet@1x.webp 1x, img/index-can-tablet@2x.webp 2x">
-            <source type="image/webp" srcset="img/index-can-mobile@1x.webp 1x, img/index-can-mobile@2x.webp 2x">
-            <source media="(min-width: 1300px)" srcset="img/index-can-desktop@1x.png 1x, img/index-can-desktop@2x.png 2x">
-            <source media="(min-width: 768px)" srcset="img/index-can-tablet@1x.jpg 1x, img/index-can-tablet@2x.jpg 2x">
-            <img class="intro__picture" src="img/index-can-mobile@1x.png" srcset="img/index-can-mobile@2x.png 2x" alt="Корм для котов Cat Energy Pro">
-          </picture>
-          <a class="intro__link btn btn--green" href="form.html">Подобрать программу</a>
+          <div class="reason-picture">
+            <picture>
+              <source type="image/webp" media="(min-width: 1200px)" srcset="img/main-city-desktop@1x.webp 1x, img/main-city-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/main-city-tablet@1x.webp 1x, img/main-city-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/main-city-mobile@1x.webp 1x, img/main-city-mobile@2x.webp 2x">
+              <source media="(min-width: 1200px)" srcset="img/main-city-desktop@1x.jpg 1x, img/main-city-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/main-city-tablet@1x.jpg 1x, img/main-city-tablet@2x.jpg 2x">
+              <img class="reason-picture__img" src="img/main-city-mobile@1x.jpg" srcset="img/main-city-mobile@2x.jpg 2x" alt="Фотография дома в Седоне">
+            </picture>
+          </div>
         </div>
-      </section>
 
+        <section class="features">
+          <h2 class="visually-hidden">Преимущества</h2>
+          <ul class="features__list">
+            <li class="features__item features__item--house">
+              <h3 class="features__tittle">Жилье</h3>
+              <p class="features__text">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+            </li>
+            <li class="features__item features__item--gift">
+              <h3 class="features__tittle">Сувениры</h3>
+              <p class="features__text">Не только китайского, но и местного производства!</p>
+            </li>
+            <li class="features__item features__item--food">
+              <h3 class="features__tittle">Еда</h3>
+              <p class="features__text">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+            </li>
+          </ul>
+        </section>
 
+        <div class="reasons__row reasons__row--reverse">
+          <div class="reasons__item reason reason--blue">
+            <h2 class="reason__tittle">Там есть мост дьявола</h2>
+            <span class="reason__number">&ndash; №2 &ndash;</span>
+            <p class="reason__text">Да, по нему можно пройти! Если вы осмелитесь, конечно</p>
+          </div>
+          <div class="reason-picture">
+            <picture>
+              <source type="image/webp" media="(min-width: 1200px)" srcset="img/main-bridge-desktop@1x.webp 1x, img/main-bridge-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/main-bridge-tablet@1x.webp 1x, img/main-bridge-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/main-bridge-mobile@1x.webp 1x, img/main-bridge-mobile@2x.webp 2x">
+              <source media="(min-width: 1200px)" srcset="img/main-bridge-desktop@1x.jpg 1x, img/main-bridge-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/main-bridge-tablet@1x.jpg 1x, img/main-bridge-tablet@2x.jpg 2x">
+              <img class="reason-picture__img" src="img/main-bridge-mobile@1x.jpg" srcset="img/main-bridge-mobile@2x.jpg 2x" alt="Фотография моста дьявола">
+            </picture>
+          </div>
+        </div>
+
+        <div class="reasons__row">
+          <div class="reasons__item reason reason--gray">
+            <h2 class="reason__tittle">Небольшая площадь</h2>
+            <span class="reason__number">&ndash; №3 &ndash;</span>
+            <p class="reason__text">Все интересные места находятся очень близко</p>
+          </div>
+          <div class="reasons__item reason reason--gray">
+            <h2 class="reason__tittle">Красивая дорога</h2>
+            <span class="reason__number">&ndash; №4 &ndash;</span>
+            <p class="reason__text">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+          </div>
+          <div class="reasons__item reason reason--gray">
+            <h2 class="reason__tittle">Мало туристов</h2>
+            <span class="reason__number">&ndash; №5 &ndash;</span>
+            <p class="reason__text">Большинство едет в гранд каньон и толпится там</p>
+          </div>
+        </div>
+
+      </article>
 
     </main>
 

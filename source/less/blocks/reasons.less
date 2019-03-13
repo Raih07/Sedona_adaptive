@@ -1,0 +1,68 @@
+.reasons {
+
+}
+
+.reasons__header {
+  padding: 40px 21px 25px;
+  text-align: center;
+  background-color: @white;
+
+  @media (min-width: @width-tablets) {
+    padding: 50px 60px 51px;
+  }
+}
+
+.reasons__tittle {
+  margin: 0 auto 27px;
+  padding: 0;
+  //max-width: 275px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
+  color: @black;
+
+  @media (min-width: @width-tablets) {
+    max-width: 620px;
+    font-size: 21px;
+    line-height: 26px;
+  }
+}
+
+.reasons__description {
+  .mar-pad-reset();
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.reasons__row {
+  /*
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 18px;
+    background: url("../img/bg-triangle.svg") no-repeat center top;
+    background-size: 100% 18px;
+    outline: 1px solid red;
+
+    @media (min-width: @width-tablets) {
+      display: none;
+    }
+  }*/
+
+  @media (min-width: @width-tablets) {
+    display: flex;
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.reasons__item {
+  @media (min-width: @width-tablets) {
+    width: 33.33%;
+  }
+}

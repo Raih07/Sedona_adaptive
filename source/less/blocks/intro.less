@@ -1,131 +1,47 @@
 .intro {
-  box-sizing: border-box;
-  padding-top: 27px;
-  margin-bottom: 22px;
+  padding-top: 90px;
+  padding-bottom: 79px;
   text-align: center;
   color: @white;
-  background-color: #63a73a;
-  background-image: linear-gradient(to top, @white 36.5%, transparent 36.5%), url("../img/index-background-mobile@1x.jpg"); //175px
-  background-size: auto, 320px auto;
+  background-color: #8195a8;
+  background-image: url("../img/bg-intro-triangle-mobile.svg"), url("../img/bg-back-mobile@1x.jpg");
+  background-size: 105%, 240%;
   background-repeat: no-repeat;
   background-position: center bottom, center top;
 
   @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
-    background-image: linear-gradient(to top, @white 36.5%, transparent 36.5%), url("../img/index-background-mobile@2x.jpg");
+    background-image: url("../img/bg-intro-triangle-mobile.svg"), url("../img/bg-back-mobile@2x.jpg");
   }
 
   @media (min-width: @width-tablets) {
-    position: relative;
-    min-height: 840px;
-    margin-bottom: 0;
-    padding-top: 30px;
-    text-align: left;
-    color: @black;
-    background: none;
+    padding-top: 77px;
+    padding-bottom: 85px;
+    background-image: url("../img/bg-intro-triangle-tablet.svg"), url("../img/bg-back-tablet@1x.jpg");
+    background-size: 102%, cover;
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/bg-intro-triangle-tablet.svg"), url("../img/bg-back-tablet@2x.jpg");
+    }
   }
 
   @media (min-width: @width-desktop) {
-    min-height: 696px;
-    padding-top: 222px;
-    margin-bottom: 80px;
-    //background-color: #63a73a;
-    background-color: #ffffff;
-    background-image: url("../img/index-background-desktop@1x.jpg");
-    background-size: 680px auto;
-    background-repeat: no-repeat;
-    background-position: right top;
-    //background-image: linear-gradient(to right, @white 52.8%, transparent 52.8%), url("../img/index-background-desktop@1x.jpg");
-    //background-size: auto, 680px auto;
-    //background-position: center, right top;
+    padding-top: 78px;
+    padding-bottom: 84px;
+    background-image: url("../img/bg-intro-triangle-desktop.svg"), url("../img/bg-back-desktop@1x.jpg");
+    background-size: 100%, cover;
 
     @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
-      //background-image: linear-gradient(to right, @white 52.8%, transparent 52.8%), url("../img/index-background-desktop@2x.jpg");
-      background-image: url("../img/index-background-desktop@2x.jpg");
+      background-image: url("../img/bg-intro-triangle-desktop.svg"), url("../img/bg-back-desktop@2x.jpg");
     }
   }
 }
 
-.intro__wpapper {
-  .container();
-  .set-container();
-}
-
-.intro__text-box {
-  margin-bottom: 28px;
+.intro__slogan {
+  width: 282px;
+  height: 214px;
 
   @media (min-width: @width-tablets) {
-    position: relative;
-    width: 487px;
-    margin-left: 87px;
-    margin-bottom: 44px;
-    z-index: 1;
-  }
-
-  @media (min-width: @width-desktop) {
-    margin-left: 80px;
-    margin-bottom: 53px;
-  }
-}
-
-.intro__tittle {
-  .mar-pad-reset();
-  margin-bottom: 25px;
-  font-size: 36px;
-  line-height: 36px;
-  font-weight: 400;
-
-  @media (min-width: @width-tablets) {
-    margin-bottom: 41px;
-    font-size: 60px;
-    line-height: 60px;
-  }
-}
-
-.intro__sub-tittle {
-  .mar-pad-reset();
-  font-size: 14px;
-  line-height: 14px;
-  text-transform: uppercase;
-
-  @media (min-width: @width-tablets) {
-    font-size: 20px;
-    line-height: 20px;
-  }
-}
-
-.intro__picture {
-  width: 280px;
-  height: auto;
-
-  @media (min-width: @width-tablets) {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 709px;
-    height: 609px;
-    transform: translateX(-50%);
-  }
-
-  @media (min-width: @width-desktop) {
-    bottom: 55px;
-    left: 38.9%;
-    width: 552px;
-    height: 499px;
-    transform: none;
-  }
-}
-
-.intro__link {
-  width: 100%;
-
-  @media (min-width: @width-tablets) {
-    position: relative;
-    z-index: 1;
-    margin-left: 90px;
-    width: auto;
-  }
-
-  @media (min-width: @width-desktop) {
-    margin-left: 80px;
+    width: 460px;
+    height: 350px;
   }
 }

@@ -1,159 +1,116 @@
 .features {
-  padding-top: 17px;
-  padding-bottom: 22px;
+  padding-top: 23px;
+  padding-bottom: 21px;
+  background-color: @white;
 
   @media (min-width: @width-tablets) {
-    padding-top: 45px;
-    padding-bottom: 1px;
-    border-bottom: 1px solid @gray-light;
+    padding-top: 56px;
+	padding-bottom: 35px;
   }
 
   @media (min-width: @width-desktop) {
-    padding-top: 43px;
-    border: none;
-  }
-}
-
-.features__wrapper {
-  .container();
-  .set-container();
-}
-
-.features__title {
-  margin: 0;
-  margin-bottom: 28px;
-  font-size: 36px;
-  line-height: 60px;
-  font-weight: 400;
-  color: @black;
-
-  @media (min-width: @width-tablets) {
-    margin-bottom: 40px;
-    font-size: 60px;
-    line-height: 60px;
+    padding-bottom: 56px;
   }
 }
 
 .features__list {
   .list-reset();
-  counter-reset: feature_number;
+  .container();
 
   @media (min-width: @width-tablets) {
     display: flex;
     flex-wrap: wrap;
+    padding: 0;
   }
 }
 
 .features__item {
   position: relative;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding-top: 12px;
+  padding-bottom: 16px;
+  padding-left: 50px;
 
   @media (min-width: @width-tablets) {
-    display: block;
-    width: 324px;
-    min-height: 235px;
-    padding-top: 32px;
-    margin-right: 60px;
-    margin-bottom: 50px;
-    counter-increment: feature_number;
+    padding: 103px 40px 26px;
+	width: 33.33%;
+	text-align: center;
 
-    &:nth-child(2n) {
-      margin-right: 0;
+    &--food {
+      order: 1;
+    }
+
+    &--gift {
+      order: 2;
     }
   }
 
   @media (min-width: @width-desktop) {
-    width: 245px;
-    margin-right: 80px;
-    margin-bottom: 15px;
-
-    &:nth-child(2n) {
-      margin-right: 80px;
-    }
-
-    &:nth-child(4n) {
-      margin-right: 0;
-    }
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   &::before {
     content: "";
-    display: block;
-    flex-shrink: 0;
-    width: 60px;
-    height: 60px;
-    margin-right: 20px;
-    background-color: @green;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-color: antiquewhite;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 50px 50px;
 
     @media (min-width: @width-tablets) {
-      margin-bottom: 32px;
-      width: 80px;
-      height: 80px;
+	 top: 2px;
+	 left: 50%;
+	 width: 75px;
+	 height: 75px;
+	 transform: translateX(-50%);
     }
   }
 
-  &::after {
+  &--house::before {
+    background-image: url("../img/icon-house.svg");
+    background-size: 39px 37px;
+
     @media (min-width: @width-tablets) {
-      content: counter(feature_number);
-      position: absolute;
-      font-size: 281px;
-      line-height: 281px;
-      color: @gray;
-      top: -7px;
-      right: 79px;
-      z-index: -1;
-    }
-
-    @media (min-width: @width-desktop) {
-      right: -4px;
+      background-size: 75px 72px;
     }
   }
 
-  &--health::before {
-    background-image: url("../img/advantage-leaf@1x.png");
+  &--gift::before {
+    background-image: url("../img/icon-gift.svg");
+    background-size: 32px 38px;
 
-    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
-      background-image: url("../img/advantage-leaf@2x.png");
-    }
-  }
-
-  &--powder::before {
-    background-image: url("../img/advantage-powder@1x.png");
-
-    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
-      background-image: url("../img/advantage-powder@2x.png");
+    @media (min-width: @width-tablets) {
+      background-size: 64px 75px;
     }
   }
 
   &--food::before {
-    background-image: url("../img/advantage-dining@1x.png");
+    background-image: url("../img/icon-burger.svg");
+    background-size: 40px 35px;
 
-    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
-      background-image: url("../img/advantage-dining@2x.png");
-    }
-  }
-
-  &--time::before {
-    background-image: url("../img/advantage-clock@1x.png");
-
-    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
-      background-image: url("../img/advantage-clock@2x.png");
+    @media (min-width: @width-tablets) {
+      background-size: 77px 68px;
     }
   }
 }
 
-.features__item-text {
-  margin: 0;
-  font-family: "ArialMT", "Arial", sans-serif;
+.features__tittle {
+  .mar-pad-reset();
+  margin-bottom: 14px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
 
   @media (min-width: @width-tablets) {
-    width: 245px;
-    font-size: 16px;
-    line-height: 24px;
+    margin-bottom: 21px;
+    font-size: 21px;
   }
+}
+
+.features__text {
+  .mar-pad-reset();
 }
