@@ -1,21 +1,13 @@
 .copyright__link {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: "ArialMT", "Arial", sans-serif;
-  font-size: 16px;
-  line-height: 16px;
-  color: @gray-font;
+  font-size: 14px;
+  line-height: 26px;
+  color: @black;
   text-decoration: none;
   outline: none;
 
-  @media (min-width: @width-tablets) {
-    display: inline-block;
-  }
-
-  &:hover .copyright__logo,
-  &:focus .copyright__logo {
-    fill: @social-hov;
+  &:hover:not(:active) .copyright__logo,
+  &:focus:not(:active) .copyright__logo {
+    fill: @blue;
   }
 
   &:active {
@@ -26,10 +18,7 @@
 .copyright__logo {
   width: 27px;
   height: 34px;
+  margin-left: 9px;
   vertical-align: middle;
-  fill: @social-norm;
-
-  @media (min-width: @width-tablets) {
-    margin-left: 18px;
-  }
+  fill: @black;
 }

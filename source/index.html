@@ -119,40 +119,56 @@
 
       </article>
 
+      <section class="search-hotels">
+        <h2 class="visually-hidden">Поиск гостиницы</h2>
+        <div class="search-hotels__wrapper">
+          <b class="search-hotels__tittle">Заинтересовались?</b>
+          <p class="search-hotels__description">Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+          <button class="search-hotels__btn btn" type="button">Найти гостиницу</button>
+        </div>
+      </section>
+
+      <section class="map">
+        <picture>
+          <source type="image/webp" media="(min-width: 1200px)" srcset="img/bg-map-desktop@1x.webp 1x, img/bg-map-desktop@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.webp 1x, img/bg-map-tablet@2x.webp 2x">
+          <source type="image/webp" srcset="img/bg-map-mobile@1x.webp 1x, img/bg-map-mobile@2x.webp 2x">
+          <source media="(min-width: 1200px)" srcset="img/bg-map-desktop@1x.jpg 1x, img/bg-map-desktop@2x.jpg 2x">
+          <source media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.jpg 1x, img/bg-map-tablet@2x.jpg 2x">
+          <img class="map__map-picture" src="img/bg-map-mobile@1x.jpg" srcset="img/bg-map-mobile@2x.jpg 2x" alt="Наши координаты">
+        </picture>
+        <div class="map-canvas" id="YMapsID"></div>
+      </section>
     </main>
 
     <footer class="main-footer">
-      <div class="main-footer__wrapper">
-        <a class="main-footer__logo">
-          <svg class="main-footer__logo-img" width="102" height="34">
-            <use xlink:href="#sprite-logo-footer"></use>
+      <div class="main-footer__item main-footer__hashtag">
+        <a href="#" class="hashtag">#Visitsedona</a>
+      </div>
+      <div class="main-footer__item main-footer__social social">
+        <a href="https://twitter.com/htmlacademy_ru" class="social__link social__link--twitter" aria-label="Мы в Твиттере">
+          <svg class="social__icon social__icon--twitter" width="18" height="14">
+            <use xlink:href="#sprite-icon-twitter"></use>
           </svg>
         </a>
-        <div class="main-footer__social social">
-          <a href="https://www.instagram.com/htmlacademy/" class="social__link social__link--insta" aria-label="Мы в Инстаграмме">
-            <svg class="social__icon social__icon--insta" width="22" height="21">
-              <use xlink:href="#sprite-icon-insta"></use>
-            </svg>
-          </a>
-          <a href="https://www.facebook.com/htmlacademy" class="social__link social__link--fb" aria-label="Мы в Фейсбуке">
-            <svg class="social__icon social__icon--fb" width="15" height="28">
-              <use xlink:href="#sprite-icon-fb"></use>
-            </svg>
-          </a>
-          <a href="https://vk.com/htmlacademy" class="social__link social__link--tw" aria-label="Мы в Твиттере">
-            <svg class="social__icon social__icon--tw" width="23" height="20">
-              <use xlink:href="#sprite-icon-tw"></use>
-            </svg>
-          </a>
-        </div>
-        <div class="main-footer__copyright copyright">
-          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
-            <span class="copyright__text">Разработано</span>
-            <svg class="copyright__logo" width="27" height="34">
-              <use xlink:href="#sprite-logo-htmlacademy"></use>
-            </svg>
-          </a>
-        </div>
+        <a href="https://www.facebook.com/htmlacademy" class="social__link social__link--fb" aria-label="Мы в Фейсбуке">
+          <svg class="social__icon social__icon--fb" width="9" height="18">
+            <use xlink:href="#sprite-icon-facebook"></use>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/user/htmlacademyru" class="social__link social__link--youtube" aria-label="Мы в Youtube">
+          <svg class="social__icon social__icon--youtube" width="20" height="14">
+            <use xlink:href="#sprite-icon-youtube"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="main-footer__item main-footer__copyright copyright">
+        <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
+          Разработано
+          <svg class="copyright__logo" width="27" height="34">
+            <use xlink:href="#sprite-icon-htmlacademy"></use>
+          </svg>
+        </a>
       </div>
     </footer>
 

@@ -8,22 +8,27 @@
 .social__link {
   position: relative;
   display: inline-block;
-  width: 45px;
-  height: 45px;
-  margin-right: 8px;
+  width: 46px;
+  height: 48px;
+  margin-right: 6px;
+  background-color: @blue;
   outline: none;
 
   &:last-child {
     margin-right: 0;
   }
 
-  &:hover .social__icon,
-  &:focus .social__icon {
-    fill: @social-hov;
+  &:hover,
+  &:focus {
+    background-color: @blue2;
   }
 
-  &:active .social__icon {
-    opacity: 0.3;
+  &:active {
+    background-color: @blue3;
+
+    .social__icon {
+      opacity: 0.3;
+    }
   }
 }
 
@@ -32,40 +37,20 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  fill: @social-norm;
+  fill: @white;
 
-  &--vk {
-    width: 22px;
-    height: 12px;
-
-    @media (min-width: @width-tablets) {
-      width: 30px;
-      height: 16px;
-    }
-  }
-
-  &--insta {
-    width: 16px;
-    height: 16px;
-
-    @media (min-width: @width-tablets) {
-      width: 23px;
-      height: 23px;
-    }
+  &--twitter {
+    width: 18px;
+    height: 14px;
   }
 
   &--fb {
-    width: 10px;
-    height: 19px;
+    width: 9px;
+    height: 18px;
+  }
 
-    @media (min-width: @width-tablets) {
-      width: 14px;
-      height: 28px;
-    }
-
-    @media (min-width: @width-tablets) {
-      left: 30%;
-      transform: translate(-30%, -50%);
-    }
+  &--youtube {
+    width: 20px;
+    height: 14px;
   }
 }

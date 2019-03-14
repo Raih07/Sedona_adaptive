@@ -52,16 +52,14 @@ img {
   outline-offset: 3px;
 }
 
-.tab-user .btn {
-  &--green:focus {
-    box-shadow: 0 0 0 3px #ffffff,
-      0 0 0 6px @green;
-  }
+.tab-user .btn:focus {
+  box-shadow: 0 0 0 3px #ffffff,
+    0 0 0 6px @blue;
+}
 
-  &--gray:focus {
-    box-shadow: 0 0 0 3px #ffffff,
-      0 0 0 6px @gray-middle2;
-  }
+.tab-user .social__link:focus {
+  box-shadow: inset 0 0 0 6px #ffffff,
+    0 0 0 3px @blue;
 }
 
 .tab-user .product__img-link:focus {

@@ -31,51 +31,36 @@ navToggle.addEventListener('click', function() {
 
 /*******Карта в подвале*********/
 
-var desktop_width = 1300;
-
-if(document.getElementById('YMapsID')) {
+if (document.getElementById('YMapsID')) {
   ymaps.ready(init);
-  var myMap, myPlacemar;
+  var myMap,
+      myPlacemar;
 
   function init() {
+    myMap = new ymaps.Map("YMapsID", {
+      center: [34.870874, -111.762654],
+      zoom: 10,
+      controls: [] //убираем все кнопки управления
 
-    var width_scr = document.documentElement.clientWidth || document.body.clientWidth;
-
-    if (width_scr >= desktop_width) {
-        myMap = new ymaps.Map("YMapsID", {
-        center: [59.939117, 30.319356],
-        zoom: 17,
-        controls: [] //убираем все кнопки управления
-        });
-      } else {
-        myMap = new ymaps.Map("YMapsID", {
-        center: [59.938812, 30.323093],
-        zoom: 17,
-        controls: [] //убираем все кнопки управления
-        });
-      }
-
+    });
     myMap.behaviors.disable('scrollZoom'); //отключение зума скролом колесика
     //myMap.behaviors.disable('drag');
 
-    myMap.controls.add('zoomControl', {
-      float: 'none'
-    });
-    myMap.controls.add('fullscreenControl', {
-      float: 'right'
-    });
+    myMap.controls.add('zoomControl');
 
-    myMap.controls.add('typeSelector'); // Переключатель слоев карты – второй слева.
+    //myMap.controls.add('geolocationControl'); //геолокация
+    myMap.controls.add('fullscreenControl'); //полноэкранный режим
+    myMap.controls.add('typeSelector'); //тип карты(спутник, карта, гибрид)
     myMap.controls.get('typeSelector').options.set('size', 'small');//принудительно выбран маленькой мконки
 
-    myPlacemark = new ymaps.Placemark([59.938812, 30.323093], {
-      hintContent: 'Cat Energy',
-      balloonContent: 'Санкт-Петербург, ул. Большая Конюшенная, д. 19/8'
+    myPlacemark = new ymaps.Placemark([34.870874, -111.762654], {
+      hintContent: 'Sedona',
+      balloonContent: ''
     }, {
       iconLayout: 'default#image', //изображение без доп текста
-      iconImageHref: 'img/map-pin.png',
-      iconImageSize: [124, 106],
-      iconImageOffset: [-62, -93] //смещение картинки
+      iconImageHref: 'img/icon-map-marker.svg',
+      iconImageSize: [27, 27],
+      iconImageOffset: [-6, -6] //смещение картинки
     });
 
     myMap.geoObjects.add(myPlacemark);

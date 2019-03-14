@@ -1,51 +1,31 @@
 .btn {
   box-sizing: border-box;
   display: inline-block;
-  padding: 11px 20px;
-  font-size: 14px;
-  line-height: 18px;
+  padding: 16px 20px;
+  font: inherit;
+  font-size: 21px;
+  line-height: 26px;
   vertical-align: middle;
   text-align: center;
-  font-family: "Oswald", "Arial", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   color: @white;
+  background-color: @blue;
   text-decoration: none;
-  text-transform: uppercase;
   cursor: pointer;
   border: none;
   outline: none;
   transition: all 0.2s ease;
 
-  @media (min-width: @width-tablets) {
-    padding: 15px 27px 17px;
-    font-size: 20px;
-    line-height: 20px;
+  &:hover {
+    background-color: @blue2;
   }
 
-  &--green {
-    background-color: @green;
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: #5496bd;
   }
 
-  &--green:hover,
-  &--green:focus {
-    background-color: @dark-green;
-  }
-
-  &--green:active {
-    color: #8fc46e;
-  }
-
-  &--gray {
-    color: @black;
-    background-color: @gray;
-  }
-
-  &--gray:hover,
-  &--gray:focus {
-    background-color: @gray-middle3;
-  }
-
-  &--gray:active {
-    color: #b9b9b9;
+  &:disabled {
+    background-color: @gray-light2;
   }
 }

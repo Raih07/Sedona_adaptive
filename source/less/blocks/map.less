@@ -1,8 +1,42 @@
 .map {
-  position: absolute;
-  //left: 0;
-  //top: 0;
+  position: relative;
+  height: 350px;
   width: 100%;
-  //height: 100%;
-  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 161px;
+    left: 50%;
+    width: 27px;
+    height: 27px;
+    background-image: url("../img/icon-map-marker.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    transform: translateX(-50%);
+    z-index: 0;
+
+    @media (min-width: @width-tablets) {
+      top: 164px;
+    }
+  }
+}
+
+.map__map-picture {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 320px;
+  height: 350px;
+
+  @media (min-width: @width-tablets) {
+    width: 768px;
+  }
+
+  @media (min-width: @width-desktop) {
+    width: 1200px;
+  }
 }
