@@ -1,21 +1,47 @@
 .intro {
-  padding-top: 90px;
-  padding-bottom: 79px;
+  &--main {
+    padding-top: 90px;  //52
+    padding-bottom: 79px; //61
+
+    @media (min-width: @width-tablets) {
+      padding-top: 77px;
+      padding-bottom: 85px;
+    }
+
+    @media (min-width: @width-desktop) {
+      padding-top: 78px;
+      padding-bottom: 84px;
+    }
+  }
+
+  &--submain {
+    padding-top: 52px;
+    padding-bottom: 61px;
+
+    @media (min-width: @width-tablets) {
+      padding-top: 95px;
+      padding-bottom: 111px;
+    }
+
+    @media (min-width: @width-desktop) {
+      padding-top: 102px;
+      padding-bottom: 114px;
+    }
+  }
+
   text-align: center;
   color: @white;
   background-color: #8195a8;
   background-image: url("../img/bg-intro-triangle-mobile.svg"), url("../img/bg-back-mobile@1x.jpg");
   background-size: 105%, 240%;
   background-repeat: no-repeat;
-  background-position: center bottom, center top;
+  background-position: center bottom, center bottom;
 
   @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
     background-image: url("../img/bg-intro-triangle-mobile.svg"), url("../img/bg-back-mobile@2x.jpg");
   }
 
   @media (min-width: @width-tablets) {
-    padding-top: 77px;
-    padding-bottom: 85px;
     background-image: url("../img/bg-intro-triangle-tablet.svg"), url("../img/bg-back-tablet@1x.jpg");
     background-size: 102%, cover;
 
@@ -25,8 +51,6 @@
   }
 
   @media (min-width: @width-desktop) {
-    padding-top: 78px;
-    padding-bottom: 84px;
     background-image: url("../img/bg-intro-triangle-desktop.svg"), url("../img/bg-back-desktop@1x.jpg");
     background-size: 100%, cover;
 
@@ -37,11 +61,28 @@
 }
 
 .intro__slogan {
-  width: 282px;
-  height: 214px;
+  &--big {
+    width: 282px;
+    height: 214px;
 
-  @media (min-width: @width-tablets) {
-    width: 460px;
-    height: 350px;
+    @media (min-width: @width-tablets) {
+      width: 460px;
+      height: 350px;
+    }
+  }
+
+  &--small {
+    width: 229px;
+    height: 39px;
+
+    @media (min-width: @width-tablets) {
+      width: 458px;
+      height: 78px;
+    }
+
+    @media (min-width: @width-desktop) {
+      width: 461px;
+      height: 79px;
+    }
   }
 }
