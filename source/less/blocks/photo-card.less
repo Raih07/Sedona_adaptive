@@ -1,0 +1,120 @@
+.photo-card {
+  box-sizing: border-box;
+  padding: 22px 20px 0;
+  border-top: 1px solid @gray-light2;
+
+  @media (min-width: @width-tablets) {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border: none;
+  }
+
+  @media (min-width: @width-desktop) {
+    position: relative;
+    display: block;
+  }
+}
+
+.photo-card__picture {
+  display: block;
+  outline: none;
+}
+
+.photo-card__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.photo-card__body {
+  box-sizing: border-box;
+  padding: 15px 0 18px;
+  background-color: @white;
+
+  @media (min-width: @width-tablets) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px 17px;
+    flex-grow: 1;
+    background-color: @gray;
+  }
+
+  @media (min-width: @width-desktop) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100%;
+    color: @white;
+    overflow: scroll;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.photo-card__description {
+  margin-bottom: 7px;
+
+  @media (min-width: @width-tablets) {
+    max-width: 75%;
+    margin-bottom: 0;
+  }
+}
+
+.photo-card__tittle {
+  .mar-pad-reset();
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+  color: @black;
+
+  @media (min-width: @width-desktop) {
+    color: inherit;
+  }
+}
+
+.photo-card__author {
+  .mar-pad-reset();
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: none;
+  color: @gray-font;
+
+  @media (min-width: @width-desktop) {
+    color: inherit;
+  }
+}
+
+.photo-card__like-btn {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 0;
+  vertical-align: middle;
+  border: none;
+  background-color: transparent;
+  outline: none;
+
+  &--active .photo-card__like-icon,
+  &:hover .photo-card__like-icon,
+  &:focus .photo-card__like-icon {
+    fill: @pink;
+  }
+}
+
+.photo-card__like-icon {
+  width: 23px;
+  height: 21px;
+  fill: @black;
+  opacity: 0.3;
+
+  @media (min-width: @width-desktop) {
+    fill: @white;
+    opacity: 1;
+  }
+}
+
+.photo-card__like-count {
+  font-weight: 700;
+  vertical-align: bottom;
+}
