@@ -33,22 +33,16 @@ img {
   height: auto;
 }
 
+.tab-user .main-header__logo[href]:focus {
+  outline: 2px solid @blue;
+}
+
 .tab-user .main-nav__link:focus {
   background-color: @blue2;
 }
 
 .tab-user .main-nav__toggle:focus {
-  outline: 2px solid @brown;
-  outline-offset: 3px;
-}
-
-.tab-user .program__item-link:focus {
-  outline: 2px solid #989898;
-  outline-offset: 3px;
-}
-
-.tab-user .compare__btn:focus {
-  outline: 2px solid #989898;
+  outline: 2px solid @blue;
   outline-offset: 3px;
 }
 
@@ -62,8 +56,16 @@ img {
     0 0 0 3px @blue;
 }
 
-.tab-user .product__img-link:focus {
-  opacity: 0.7;
+.tab-user .photo-card__picture:focus {
+  transform: scale(1.01);
+}
+
+.tab-user .video-player__thumb:focus {
+  background-color: @pink;
+}
+
+.tab-user .video-player__control-btn:focus svg {
+  fill: @pink;
 }
 
 .tab-user .product__tittle-link:focus {

@@ -155,6 +155,47 @@
         </ul>
       </section>
 
+      <section class="video">
+        <header class="video__header">
+          <h1 class="video__tittle">Все еще сомневаетесь?</h1>
+          <p class="video__description">Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!</p>
+        </header>
+        <div class="video__video-player video-player">
+          <div class="video-player__picture" href="#">
+            <picture>
+              <source type="image/webp" media="(min-width: 1200px)" srcset="img/video-desktop@1x.webp 1x, img/video-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/video-tablet@1x.webp 1x, img/video-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/video-mobile@1x.webp 1x, img/video-mobile@2x.webp 2x">
+              <source media="(min-width: 1200px)" srcset="img/video-desktop@1x.jpg 1x, img/video-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/video-tablet@1x.jpg 1x, img/video-tablet@2x.jpg 2x">
+              <img class="video-player__img" src="img/video-mobile@1x.jpg" srcset="img/video-mobile@2x.jpg 2x" alt="Видео превью">
+            </picture>
+          </div>
+          <div class="video-player__control">
+            <button class="video-player__control-btn video-player__control-btn--replay" aria-label="Повторить воспроизведение видео">
+              <svg class="video-player__control-icon video-player__control-icon--replay" width="16" height="20">
+                <use xlink:href="#sprite-icon-video-replay"></use>
+              </svg>
+            </button>
+            <div class="video-player__progress-item">
+              <div class="video-player__progress-bar">
+                <button class="video-player__thumb" type="button" aria-label="Контрол перемотки"></button>
+              </div>
+            </div>
+            <button class="video-player__control-btn video-player__control-btn--subtitles" aria-label="Субтитры">
+              <svg class="video-player__control-icon video-player__control-icon--subtitles" width="32" height="20">
+                <use xlink:href="#sprite-icon-video-subtitles"></use>
+              </svg>
+            </button>
+            <button class="video-player__control-btn video-player__control-btn--full-screen" aria-label="На весь экран">
+              <svg class="video-player__control-icon video-player__control-icon--full-screen" width="20" height="20">
+                <use xlink:href="#sprite-icon-video-fullscreen"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <footer class="main-footer">
@@ -187,30 +228,6 @@
         </a>
       </div>
     </footer>
-
-    <div class="popup popup--success popup--close" id="popup_success">
-      <div class="popup__body popup__body--success">
-        <p class="popup__tittle"><b>Ваш отзыв отправлен!</b></p>
-        <p class="popup__text">
-          Спасибо за ваше участие, ваш отзыв уже поступил к нам.<br>В ближайшее время мы опубликуем его на сайте.
-        </p>
-      </div>
-      <div class="popup__bottom popup__bottom--success">
-        <button class="popup__btn btn btn--square" type="button">Закрыть окно</button>
-      </div>
-    </div>
-    <div class="popup popup--error popup--close" id="popup_error">
-      <div class="popup__body popup__body--error">
-        <p class="popup__tittle"><b>Что-то пошло не так!</b></p>
-        <p class="popup__text">
-          Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить
-        </p>
-      </div>
-      <div class="popup__bottom popup__bottom--error">
-        <button class="popup__btn btn btn--square" type="button">ok</button>
-      </div>
-    </div>
-
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="js/script.min.js"></script>
   </body>
