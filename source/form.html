@@ -40,20 +40,20 @@
         <img class="intro__slogan intro__slogan--small" src="img/text-sedona.svg" alt="Sedona">
       </div>
       <section class="reviews">
-        <header class="reviews__header">
-          <h1 class="reviews__tittle">Оставьте свой отзыв</h1>
-          <p class="reviews__description">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
+        <header class="reviews__header page-main__header page-main__header--submain">
+          <h1 class="reviews__tittle page-main__tittle">Оставьте свой отзыв</h1>
+          <p class="reviews__description page-main__description">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
         </header>
         <form class="reviews__form" action="https://echo.htmlacademy.ru" method="post">
           <div class="reviews__item reviews__item--user-info">
             <h2 class="reviews__item-tittle reviews__item-tittle--user-info">Представьтесь:</h2>
             <div class="reviews__group reviews__group--user-info">
               <label class="reviews__text-label reviews__text-label--user-info" for="user_name">Имя*:</label>
-              <input class="reviews__field" type="text" name="user-name" id="user_name" placeholder="Петр">
+              <input class="reviews__field" type="text" name="user-name" id="user_name" placeholder="Петр" required>
             </div>
             <div class="reviews__group reviews__group--user-info">
               <label class="reviews__text-label reviews__text-label--user-info" for="user_fam">Фамилия*:</label>
-              <input class="reviews__field" type="text" name="user-fam" id="user_fam" placeholder="Иванов">
+              <input class="reviews__field" type="text" name="user-fam" id="user_fam" placeholder="Иванов" required>
             </div>
             <div class="reviews__group reviews__group--user-info">
               <label class="reviews__text-label reviews__text-label--user-info" for="user_second_name">Отчество:</label>
@@ -66,11 +66,11 @@
             <div class="reviews__container">
               <div class="reviews__group reviews__group--contact reviews__group--icon reviews__group--icon-phone">
                 <label class="reviews__text-label reviews__text-label--contact" for="tel">Контактный телефон*:</label>
-                <input class="reviews__field" type="tel" name="tel" id="tel" placeholder="Введите телефон">
+                <input class="reviews__field" type="tel" name="tel" id="tel" placeholder="Введите телефон" required>
               </div>
               <div class="reviews__group reviews__group--contact reviews__group--icon reviews__group--icon-mail">
                 <label class="reviews__text-label reviews__text-label--contact" for="mail">Электронная почта*:</label>
-                <input class="reviews__field" type="email" name="email" id="mail" placeholder="Введите e-mail">
+                <input class="reviews__field" type="email" name="email" id="mail" placeholder="Введите e-mail" required>
               </div>
             </div>
           </div>

@@ -67,34 +67,16 @@ if (document.getElementById('YMapsID')) {
   }
 }
 
-/*******Слайдер сравнения кошек*******/
+/*******Ползуонок видеоплеера*******/
 
 var SLIDE_EVENT = 'slide';
-var WIDTH_BEFORE = 0;
-var WIDTH_AFTER = 100;
 
-var sliderElement = document.querySelector('.compare__bar');
-var pictureBeforeElement = document.querySelector('.compare__picture--before');
-var buttonBefore = document.querySelector('.compare__btn--before');
-var buttonAfter = document.querySelector('.compare__btn--after');
+var progressBarElement = document.querySelector('.video-player__progress-bar');
 
-if (sliderElement) {
-  var sliderCompare = new Slider({
-    elem: sliderElement,
+if (progressBarElement) {
+  var progressBar = new Slider({
+    elem: progressBarElement,
     max: 100
-  });
-
-  document.addEventListener(SLIDE_EVENT, function(evt) {
-    pictureBeforeElement.style.width = 100 - evt.detail.pos + '%';
-    //console.log(evt.detail.pos);
-  });
-
-  buttonBefore.addEventListener('click', function () {
-    sliderCompare.setValue(WIDTH_BEFORE);
-  });
-
-  buttonAfter.addEventListener('click', function () {
-    sliderCompare.setValue(WIDTH_AFTER);
   });
 
   //полифилл для включения CustomEvent в IE9+
@@ -117,7 +99,7 @@ if (sliderElement) {
 
   function Slider(options) {
     var elem = options.elem;
-    var thumbElem = elem.querySelector('.compare__toggle');
+    var thumbElem = elem.querySelector('.video-player__thumb');
 
     var max = options.max || 100;
     var sliderCoords, thumbCoords, shiftX, pixelsPerValue;
@@ -130,7 +112,7 @@ if (sliderElement) {
 
     elem.ontouchstart = elem.onmousedown = function(event) {
       //console.log(event.target.className);
-      if (event.target.classList.contains('compare__toggle')) {
+      if (event.target.classList.contains('video-player__thumb')) {
         var clientX = event.clientX || event.touches[0].clientX;
         var clientY = event.clientY || event.touches[0].clientY;
 
@@ -165,8 +147,8 @@ if (sliderElement) {
         newLeft = rightEdge;
       }
 
-      thumbElem.style.left = newLeft + 'px';  //версия в пикселях
-      //thumbElem.style.left = (newLeft / elem.offsetWidth) * 100 + '%';  //версия в процентах
+      //thumbElem.style.left = newLeft + 'px';  //версия в пикселях
+      thumbElem.style.left = (newLeft / elem.offsetWidth) * 100 + '%';  //версия в процентах
       setEvent(SLIDE_EVENT, newLeft);
     }
 
@@ -205,8 +187,8 @@ if (sliderElement) {
     function setValue(value) {
       var pos = valueToPosition(value);
       console.log(value + ', ' + pos);
-      thumbElem.style.left = pos + 'px';  //версия в пикселях
-      //thumbElem.style.left = (pos / elem.offsetWidth) * 100 + '%';  //версия в процентах
+      //thumbElem.style.left = pos + 'px';  //версия в пикселях
+      thumbElem.style.left = (pos / elem.offsetWidth) * 100 + '%';  //версия в процентах
       setEvent(SLIDE_EVENT, pos);
     }
 
@@ -216,50 +198,54 @@ if (sliderElement) {
 
 /*******Открытии и закрытие попапов*******/
 
-var pop_sucs = document.getElementById('popup_success');
-var pop_err = document.getElementById('popup_error');
-var form_contest= document.getElementsByClassName("questionnaire__form")[0];
-var first_name = document.getElementById('first_name');
-var second_name = document.getElementById('surname');
+var popupSuccess = document.querySelector('.popup--success');
+var popupError = document.querySelector('.popup--error');
+var reviewsForm= document.querySelector(".reviews__form");
+var userName = document.getElementById('user_name');
+var userFam = document.getElementById('user_fam');
+var phone = document.getElementById('tel');
 var email = document.getElementById('mail');
-var storage_name = localStorage.getItem('first_name');
-var storage_second_name = localStorage.getItem('second_name');
-var storage_email = localStorage.getItem('email');
+var storageName = localStorage.getItem('user_name');
+var storageFam = localStorage.getItem('user_fam');
+var storagePhone = localStorage.getItem('phone');
+var storageEmail = localStorage.getItem('email');
 
-if (form_contest) {
-  if (storage_name) {
-    first_name.value = storage_name;
-    //console.log('first_name ' + storage_name);
+if (reviewsForm) {
+  if (storageName) {
+    userName.value = storageName;
   }
 
-  if (storage_second_name) {
-    second_name.value = storage_second_name;
-    //console.log('second_name ' + storage_second_name);
+  if (storageFam) {
+    userFam.value = storageFam;
   }
 
-  if (storage_email) {
-    email.value = storage_email;
-    //console.log('email ' + storage_email);
+  if (storagePhone) {
+    phone.value = storagePhone;
   }
 
-  function showPopup(popup, form_contest) {
+  if (storageEmail) {
+    email.value = storageEmail;
+  }
+
+  function showPopup(popup, form) {
     popup.classList.remove('popup--close');
     popup.classList.add('popup--open');
 
-    var btn_close= popup.getElementsByClassName("popup__btn")[0];
+    var btnСlose= popup.querySelector(".popup__btn");
 
-    btn_close.onclick = function() {
+    btnСlose.addEventListener('click', function() {
       if (popup.classList.contains('popup--success')) {
-        form_contest.submit();
+        form.submit();
       }
-      closePopup(popup);
-    }
 
-    document.onkeydown = function (event) {
-      if (event.keyCode === 27) { // escape
+      closePopup(popup);
+    });
+
+    document.addEventListener('keydown', function(evt) {
+      if (evt.keyCode === 27) { // escape
         closePopup(popup);
       }
-    };
+    });
   }
 
   function closePopup(popup) {
@@ -267,19 +253,31 @@ if (form_contest) {
     popup.classList.add('popup--close');
   }
 
-  form_contest.addEventListener('submit', function (event) {
-    if (first_name.value == '' || second_name.value == '' ||email.value == '') {
-      showPopup(pop_err);
-      //console.log('error');
+  var onFormInvaliv = function (evt) {
+    showPopup(popupError);
+    var errorInput = evt.target;
+    errorInput.classList.add('reviews__field--error');
+
+    errorInput.addEventListener('focus', function () {
+      errorInput.classList.remove('reviews__field--error');
+    });
+  };
+
+  reviewsForm.addEventListener('invalid', onFormInvaliv, true);
+
+  reviewsForm.addEventListener('submit', function (evt) {
+    /*
+    if (userName.value == '' || userFam.value == '' || phone.value == '' || email.value == '') {
+      showPopup(popupError);
       event.preventDefault();
     }
-    else {
-      showPopup(pop_sucs, form_contest);
-      //console.log('suc');
-      localStorage.setItem('first_name', first_name.value);
-      localStorage.setItem('second_name', second_name.value);
+    else {*/
+      showPopup(popupSuccess, reviewsForm);
+      localStorage.setItem('user_name', userName.value);
+      localStorage.setItem('user_fam', userFam.value);
+      localStorage.setItem('phone', phone.value);
       localStorage.setItem('email', email.value);
-      event.preventDefault();
-    }
+      evt.preventDefault();
+    //}
   });
 }
