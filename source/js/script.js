@@ -67,7 +67,7 @@ if (document.getElementById('YMapsID')) {
   }
 }
 
-/*******Ползуонок видеоплеера*******/
+/*******Ползунок видеоплеера*******/
 
 var SLIDE_EVENT = 'slide';
 
